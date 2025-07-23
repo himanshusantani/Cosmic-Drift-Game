@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Drift - Space Exploration Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen">
+            <div class="title-container">
+                <h1 class="game-title">COSMIC DRIFT</h1>
+                <p class="game-subtitle">Navigate the infinite cosmos</p>
+            </div>
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <p>🚀 Use WASD or Arrow Keys to control your ship</p>
+                <p>💎 Collect cosmic crystals for points</p>
+                <p>⛽ Manage your fuel wisely</p>
+                <p>🌌 Avoid asteroids and survive as long as possible</p>
+            </div>
+            <button id="startButton" class="game-button">START MISSION</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen hidden">
+            <canvas id="gameCanvas"></canvas>
+            
+            <!-- HUD -->
+            <div id="hud">
+                <div class="hud-item">
+                    <span class="hud-label">SCORE</span>
+                    <span id="score" class="hud-value">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">LEVEL</span>
+                    <span id="level" class="hud-value">1</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">CRYSTALS</span>
+                    <span id="crystals" class="hud-value">0</span>
+                </div>
+                <div class="hud-item fuel-container">
+                    <span class="hud-label">FUEL</span>
+                    <div class="fuel-bar">
+                        <div id="fuelLevel" class="fuel-level"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls Info -->
+            <div id="controls">
+                <p>WASD / Arrow Keys to move • SPACE to boost</p>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen hidden">
+            <div class="game-over-container">
+                <h2 class="game-over-title">MISSION COMPLETE</h2>
+                <div class="final-stats">
+                    <div class="stat">
+                        <span class="stat-label">Final Score</span>
+                        <span id="finalScore" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Level Reached</span>
+                        <span id="finalLevel" class="stat-value">1</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Crystals Collected</span>
+                        <span id="finalCrystals" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Time Survived</span>
+                        <span id="timeSurvived" class="stat-value">0s</span>
+                    </div>
+                </div>
+                <button id="restartButton" class="game-button">NEW MISSION</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
